@@ -1,0 +1,15 @@
+name: Every 10 minutes
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say hello + timestamp
+        run: |
+          echo "Hello from scheduled workflow!"
+          date -u
